@@ -1,10 +1,9 @@
 package personnages;
-import personnages.Druide;
 
 public class Gaulois {
-	private String nom;
+	private static String nom;
 	private int force;
-	private int effetPotion = 1;
+	private static int effetPotion = 1;
 
 	public Gaulois(String nom, int force, int effetPotion) {
 		super();
@@ -17,12 +16,18 @@ public class Gaulois {
 		return nom;
 	}
 	
+	
+	
+	public void setForce(int force) {
+		this.force = force;
+	}
+
 	public void parler(String texte) {
 		System.out.println(prendreParole() + "<<" + texte + ">>");
 	
 	}
 	
-	private String prendreParole() {
+	private static String prendreParole() {
 		return "Le gaulois " + nom + " : "; 
 	}
 	
@@ -32,8 +37,8 @@ public class Gaulois {
 		
 	}
 	
-	public void boirePotion(int i) {
-		this.effetPotion = i;
+	public static void boirePotion(int i) {
+		effetPotion = i;
 		if(i==3) {
 			System.out.println(prendreParole() + "Merci Druide, je sens que ma force est 3 fois dupliquée.");
 		}
@@ -49,6 +54,7 @@ public class Gaulois {
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Asterix", 8, 1);
 		System.out.println(asterix.nom);
+		boirePotion(3);
 		
 	
 	}
