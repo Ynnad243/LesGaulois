@@ -1,35 +1,88 @@
+//package histoire;
+//
+//
+//import personnages.Gaulois;
+//import personnages.Romain;
+//import personnages.Druide;
+//
+//public class Scenario {
+//
+//	public static void main(String[] args) {
+//		Gaulois asterix = new Gaulois("Astérix", 8);
+//		Gaulois obl = new Gaulois("Obelix", 5);
+//		Romain minus = new Romain("Minus", 6);
+//		int effetPotionMin = 5;
+//		int effetPotiionMax = 10;
+//		Druide pano = new Druide("Panoramix", effetPotionMin, effetPotiionMax);
+//		
+//		
+//		
+//		
+//		pano.intro("Je vais aller prepare une petite potion ...");
+//		pano.preparerPotion();
+//		pano.booster(obl);
+//		obl.parler("Par Benelos, ce n'est pas juste ! ");
+//		asterix.boirePotion(6);
+//		asterix.parler("Bonjour à tous");
+//		minus.parler("UN GAU... UN GAUGAU...");
+//		asterix.frapper(minus);
+//		asterix.frapper(minus);
+//		asterix.frapper(minus);
+//
+//		
+//	}
+//
+//}
+
+
 package histoire;
 
-
+import personnages.Druide;
+import personnages.Equipement;
 import personnages.Gaulois;
 import personnages.Romain;
-import personnages.Druide;
+//import villagegaulois.Musee;
 
 public class Scenario {
 
 	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("Astérix", 8);
-		Gaulois obl = new Gaulois("Obelix", 5);
+		
+		Druide druide = new Druide("Panoramix", 5, 10);
+		druide.parler("Je vais aller preparer une petite potion...");
+		druide.preparerPotion();
+		
+		Gaulois obelix = new Gaulois("Obelix", 25);
+		Gaulois asterix = new Gaulois("Asterix", 8);
+		
+		druide.booster(obelix);
+		
+		obelix.parler("Par Belenos, ce n'est pas juste !");
+		druide.booster(asterix);
+		asterix.parler("Bonjour");
+		
 		Romain minus = new Romain("Minus", 6);
-		int effetPotionMin = 5;
-		int effetPotiionMax = 10;
-		Druide pano = new Druide("Panoramix", effetPotionMin, effetPotiionMax);
-		
-		
-		
-		
-		pano.intro("Je vais aller prepare une petite potion ...");
-		pano.preparerPotion();
-		pano.booster(obl);
-		obl.parler("Par Benelos, ce n'est pas juste ! ");
-		asterix.boirePotion(6);
-		asterix.parler("Bonjour à tous");
+		Romain milexcus = new Romain("Milexcus", 8);
+	
+		minus.sEquiper(Equipement.BOUCLIER);
+		minus.sEquiper(Equipement.CASQUE);
+		milexcus.sEquiper(Equipement.CASQUE);
 		minus.parler("UN GAU... UN GAUGAU...");
-		asterix.frapper(minus);
-		asterix.frapper(minus);
-		asterix.frapper(minus);
-
+//		
+		do {
+			asterix.frapper(minus);
+		} while (minus.getForce() > 0);
 		
+		milexcus.parler("UN GAU... UN GAUGAU...");
+		
+		do {
+			asterix.frapper(milexcus);
+		} while (milexcus.getForce() > 0);
+		
+//		Partie a decommenter
+		
+//		Musee musee = new Musee();
+//		asterix.faireUneDonnation(musee);
+
 	}
 
 }
