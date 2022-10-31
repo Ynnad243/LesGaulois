@@ -19,6 +19,16 @@ public class Commercant extends Humain{
 		this.setArgent(i);
 		this.parler(i + " sous ! Je te remercie, genereux donateur !");
 	}
+	
+	public static void main(String[] args) {
+		Commercant c1 = new Commercant("Marco", "undefined", 15);
+		System.out.println(c1.argent);
+		c1.seFaireExtorquer();
+		System.out.println(c1.argent);
+		c1.recevoirArgent(4445);
+		System.out.println(c1.argent);
+		
+	}
 		
 	}
 

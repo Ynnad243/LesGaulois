@@ -13,8 +13,8 @@ public class Yakuza extends Humain{
 		parler("Tiens, tiens, ne serait-ce pas un faible marchand qui passe par la ?");
 		parler(c.getNom() + " si tu tiens a la vie, donne moi ta bourse !");
 		argent += c.getArgent();
+		parler("J'ai pique les " + c.getArgent() + " sous de " + c.getNom() + ", ce qui me fait " + getArgent() + " sous dans ma poche. Hi Hi !");
 		c.seFaireExtorquer();
-		parler("J'ai pique les " + c.getArgent() + "sous de " + c.getNom() + ", ce qui me fait " + getArgent() + " sous dans ma poche. Hi Hi !");
 		reputation += 1;
 	}
 	
