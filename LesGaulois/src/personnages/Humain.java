@@ -3,17 +3,21 @@ package personnages;
 public class Humain {
 	private String nom;
 	private String boisson;
-	private int argent;
+	public int argent;
 	
 
 
 	public String getNom() {
 		return nom;
 	}
-	
 
 	public String getBoisson() {
 		return boisson;
+	}
+	
+
+	public void setBoisson(String boisson) {
+		this.boisson = boisson;
 	}
 
 
@@ -21,9 +25,13 @@ public class Humain {
 		return argent;
 	}
 	
-	
-	
-    public Humain(String nom, String boisson, int argent) {
+		
+    public void setArgent(int argent) {
+		this.argent = argent;
+	}
+
+
+	public Humain(String nom, String boisson, int argent) {
 		super();
 		this.nom = nom;
 		this.boisson = boisson;
@@ -48,8 +56,13 @@ public class Humain {
 		System.out.println(prendreParole() + "Mmmm, un bon verre de " + getBoisson() + " GLOUPS !");
 	}
 	
-	public void acheter(String bien, int prix) {
-		
+	public void acheter(String bien,int prix) {
+		if (prix<=argent) {
+			perdreArgent(prix);
+			parler("J'ai "+ argent + " sous en poche, je vais pouvoir m'acheter un " + bien + " a " + prix +" sous " );
+		} else {
+			parler("Je n'ai plus que " + argent + " sous en poche. Je ne peux meme pas m'offrir un kimono a " + prix + " sous.");
+		}
 	}
 	
 	public void gagnerArgent(int gain) {
