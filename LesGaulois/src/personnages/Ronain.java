@@ -1,7 +1,8 @@
 package personnages;
 
 public class Ronain extends Humain{
-	private int honneur;
+	private int honneur = 1;
+	private int force = 2*honneur;
 	
 	public Ronain(String nom, String boisson, int argent) {
 		super(nom, boisson, argent);
@@ -13,9 +14,21 @@ public class Ronain extends Humain{
 		parler(c.getNom() + ", prend ces " + (getArgent()*10)/100 + " sous");
 		c.recevoirArgent((getArgent()*10)/100);
 	}
+	
+	public void provoquer(Yakuza yak) {
+		if(force >= yak.getReputation()) {
+			setArgent(yak.getArgent());
+			honneur += 1;
+			parler("Je t'ai retrouve vermine, tu vas payer pour ce que tu as fait a ce pauvre marchand");
+			parler("Je t'ai eu petit yakusa!");
+			yak.perdre();
+		} else {
+			parler("J'ai perdu contre ce yakuza, mon honneur et ma bourse ont en pris un coup");
+			yak.gagner(this);
+			honneur -=1;
+		}
+	}
 
-	
-	
 
 	public static void main(String[] args) {
 		Commercant c1 = new Commercant("Marco", "undefined", 15);

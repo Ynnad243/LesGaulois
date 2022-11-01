@@ -15,7 +15,6 @@ public class Humain {
 		return boisson;
 	}
 	
-
 	public void setBoisson(String boisson) {
 		this.boisson = boisson;
 	}
@@ -71,8 +70,6 @@ public class Humain {
 	public void perdreArgent(int perte) {
 		this.argent -= perte;
 	}
-
-
 
 
 	public static void main(String[] args) {
