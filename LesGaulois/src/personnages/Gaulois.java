@@ -82,9 +82,9 @@ public class Gaulois {
         asterix.trophees[0] = Equipement.BOUCLIER;
         asterix.trophees[1] = Equipement.BOUCLIER;
         asterix.trophees[2] = Equipement.BOUCLIER;
-        
-        Musee musee = new Musee();
-        asterix.faireUneDonation(musee);
+//        
+//        Musee musee = new Musee();
+//        asterix.faireUneDonation(musee);
     	
 
 

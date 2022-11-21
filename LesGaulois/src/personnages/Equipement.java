@@ -10,10 +10,13 @@ public enum Equipement {
 		this.nom = nom;
 	}
 	
-	public String toString() {
-		return nom;
-	}
+//	public String toString() {
+//		return nom;
+//	}
 	
+	public String toString() {
+		return "Equipement [Equipement=" + nom + "]";
+	}
 	
 	
 	

@@ -53,6 +53,7 @@ public class Scenario {
 		
 		Gaulois obelix = new Gaulois("Obelix", 25);
 		Gaulois asterix = new Gaulois("Asterix", 8);
+		Romain rom = new Romain("Minus", 15);
 		
 		druide.booster(obelix);
 		
@@ -67,7 +68,7 @@ public class Scenario {
 		minus.sEquiper(Equipement.CASQUE);
 		milexcus.sEquiper(Equipement.CASQUE);
 		minus.parler("UN GAU... UN GAUGAU...");
-//		
+	
 		do {
 			asterix.frapper(minus);
 		} while (minus.getForce() > 0);
@@ -78,10 +79,11 @@ public class Scenario {
 			asterix.frapper(milexcus);
 		} while (milexcus.getForce() > 0);
 		
-//		Partie a decommenter
+
 		
-//		Musee musee = new Musee();
-//		asterix.faireUneDonnation(musee);
+
+		
+		
 
 	}
 

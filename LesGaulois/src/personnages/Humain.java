@@ -3,7 +3,12 @@ package personnages;
 public class Humain {
 	private String nom;
 	private String boisson;
+	public int nbConnaissances = 0;
+	private final int MaxConnaissances = 30;
+	private Humain [] connex = new Humain[MaxConnaissances];
 	public int argent;
+	private int cpt = 0;
+	
 	
 
 
@@ -69,6 +74,36 @@ public class Humain {
 	}
 	public void perdreArgent(int perte) {
 		this.argent -= perte;
+	}
+	
+	public void faireConnaissance(Humain homo) {
+		System.out.println(getNom() + " rencontre " + homo.getNom());
+		direBonjour();
+		homo.direBonjour();
+		this.memoriser(homo);
+		homo.memoriser(this);
+	}
+	
+
+	
+	public void memoriser(Humain homo) {
+		if (nbConnaissances < MaxConnaissances) {
+			connex[nbConnaissances] = homo;
+			nbConnaissances++;
+		} else {
+			connex[0] = homo;
+
+		}
+	
+		
+	}
+	
+	public void listerConnaissances() {
+		parler("Je connais beaucoup de monde dont : ");
+		for(int i=0; i<nbConnaissances; i++) {
+			
+			System.out.println(connex[i].getNom());
+		}
 	}
 
 
