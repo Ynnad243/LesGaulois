@@ -10,6 +10,14 @@ public class Yakuza extends Humain{
 		this.clan = clan;
 	}
 	
+	
+	
+	public String getClan() {
+		return clan;
+	}
+
+
+
 	public void extorquer(Commercant c) {
 		
 		parler("Tiens, tiens, ne serait-ce pas un faible marchand qui passe par la ?");
@@ -40,6 +48,12 @@ public class Yakuza extends Humain{
 		reputation += 1;
 		parler("Ce ronin pensait vraiment battre " + getNom() + " du clan de " + clan + "? Je l'ai depouille de ses " + ron.argent + " sous.");
 		ron.setArgent(0);
+	}
+	
+	@Override
+	public void direBonjour() {
+		parler("Bonjour ! Je m'appelle " + getNom() + " et j'aime boire du " + getBoisson());
+		parler("Mon clan est celui de " + getClan());
 	}
 
 	public static void main(String[] args) {
